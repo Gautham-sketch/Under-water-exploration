@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 153</title>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="./rotation.js"></script>
+    </head>
+
+    <body>
+    <a-scene background="color:#1a1aff">
+        <a-entity look-controls camera></a-entity>
+
+        <a-asset>
+            <a-asset-item id="diver" src="./diver/scene.gltf"></a-asset-item>
+            <a-asset-item id="island" src="./low_poly_island/scene.gltf"></a-asset-item>
+            <a-asset-item id="bubbles" src="./water_bubbles/scene.gltf"></a-asset-item>
+        </a-asset>
+
+        <a-entity
+        id="id1"
+        gltf-model="#island"
+        position="0 -1 -17"
+        scale="5 5 5"
+        animation="property: position; to: 0 0 10;easing:linear; loop: true; dur: 150000"
+        rotater>
+        </a-entity>
+
+        <a-entity
+        id="id2"
+        gltf-model="#bubbles"
+        position="0.5 0 -3"
+        scale="0.005 0.005 0.005">
+        </a-entity>
+
+        <a-entity 
+        id="id3" 
+        gltf-model="#diver"
+        scale="1.5 1.5 1.5" 
+        position="0 0 -3">
+        </a-entity>
+    </a-scene>
+    </body>
+</html>
